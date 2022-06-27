@@ -204,3 +204,11 @@ same as 21 but 80-20 split train-dev
 6m27 for fine tuning
 0.2598 loss 0.9236 acc
 0.2899 valloss 0.9220 valacc
+
+21bisMAC)
+same as 21 but 80-20 split train-dev
+5+15 epochs
+4m12 for initial training
+11m50 for fine tuning
+0.2752 loss 0.9173 acc
+0.2999 valloss 0.9124 valacc
