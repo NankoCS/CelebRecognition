@@ -1,0 +1,206 @@
+1)
+ResNet50
+includetop = False
+added data augmentation + precprocessing
+gloabalavgpooling2d
+flatten
+softmax
+
+min pictures per person 40
+12 classes in total
+1560 files
+0.2 val split
+32 mini batch size
+adam optimizer
+5 initial training epochs then 10 fine tuning
+always getting around 0.85-0.9 for acc but 0.8 max for val_acc
+
+2)
+same settings except 128 size of mini batches
+3m50 for initial training
+7m38 for fine tuning
+0.92 loss 0.7596 acc
+1.09 valloss 0.6891 valacc
+
+3)
+same settings but adding a dropout layer 0.2
+3m52 for initial training
+7m34 for fine tuning
+0.571 loss 0.8438 acc
+0.8429 valloss 0.766 valacc
+
+4)
+MobileNetV2
+training: 5 + 10
+1m8 for initial training
+2m8 for fine tuning
+1.585 loss 0.47 acc
+1.6153 valloss 0.4583 valacc
+
+5)
+same as previous but training 10 + 20
+2m9 for initial training
+4m16 for fine tuning
+0.6879 loss 0.8037 acc
+1.0347 valloss 0.6442 valacc
+
+5bis)
+same as previous but changed fine tuning from layer 120 to 140
+2m7 for initial training
+4m20 for fine tuning
+0.7 loss 0.7989 acc
+1.0535 valloss 0.66 valacc
+eval:       loss               accuracy   
+train:[0.5751489996910095, 0.8653846383094788]
+val:[1.0411020517349243, 0.6698718070983887]
+
+6)
+same as 5) but training 15 + 35
+3m25 for initial training
+7m47 for fine tuning
+0.1590 loss 0.9856 acc
+0.5883 valloss 0.8269 valacc
+
+6bis)
+same as 6) but size of mini batch = 32
+3m12 for initial training
+7m24 for fine tuning
+0.1590 loss 0.9856 acc
+0.5883 valloss 0.8269 valacc
+
+7)
+same settings as 6bis but with dataset containing min 3 images per person
+training 15 normal and 15 fine tuning
+not working at all
+0.45 val_acc
+
+8)
+adam optimizer
+min img per person 50
+converted every image to a zoom on the face
+15 normal training + 20 fine tuning
+3m21 for initial training
+4m31 for fine tuning
+0.11 loss 0.9856 acc
+0.6006 valloss 0.8494 valacc
+
+8bis)
+RMSProp optimizer
+same settings
+3m26 for initial training
+4m31 for fine tuning
+0.11 loss 0.9856 acc
+0.6006 valloss 0.8494 valacc
+same results but obtaining them in quicker training time
+
+9)
+added a layer of dropout
+1m49 for initial training
+2m18 for fine tuning
+0.166 loss 0.9471 acc
+0.6953 valloss 0.8173 valacc
+
+10)
+10 training and 10 fine tuning b 
+added a layer of dropout again
+2m23 for initial training
+2m18 for fine tuning
+0.166 loss 0.9471 acc
+0.6953 valloss 0.8173 valacc
+
+11)
+same settings as previous but SGD optimizer
+2m20 for initial training but different results
+2m18 for fine tuning
+0.166 loss 0.9471 acc
+0.6953 valloss 0.8173 valacc
+training accuracy less than 
+
+11bis)
+same as previous but SGD 0.01 training and 0.001 fine tuning
+39/39 [==============================] - 12s 301ms/step - loss: 0.3891 - accuracy: 0.8990
+[0.38911667466163635, 0.8990384340286255]
+10/10 [==============================] - 3s 296ms/step - loss: 0.6937 - accuracy: 0.8013
+[0.6937090754508972, 0.8012820482254028]
+
+12)
+same except changed from logits to True and took out the activation softmax for the last layer
+0.49 loss 0.8447 acc
+0.6354 valloss 0.8269 valacc
+
+13)
+SGD 0.1 then 0.01
+5 + 20 training epochs
+from logits true and no softmax
+2 dense layers and 2 dropout at 0.2
+1m8 for initial training
+4m25 for fine tuning
+0.422 loss 0.8694 acc
+0.6368 valloss 0.8173 valacc
+
+14) 
+exact same as 13) except instead of avgpooling used maxpooling
+not working at all
+
+15)
+same as 13) but took out the flatten layer
+1m8 for initial training
+4m25 for fine tuning
+0.3966 loss 0.8718 acc
+0.5993 valloss 0.8141 valacc
+
+16)
+tuning from the 100th layers of the network
+exact same as 15) but split training and dev to 90-10
+1m5 for initial training
+4m18 for fine tuning
+0.4294 loss 0.8675 acc
+0.5297 valloss 0.8333 valacc
+
+17)TOP SO FAR
+5+20 epochs
+took out the 2 dense layers and 2 out of the 3 dropout layers
+1m5 for initial training
+4m18 for fine tuning
+0.3151 loss 0.9088 acc
+0.4609 valloss 0.8526 valacc
+
+18)
+exact same as 17) but took out the last remaining dropout layer
+good results, better in training but for the dev set it is capping at 0.8462
+keeping the dropout makes the model not overfit too much
+1m5 for initial training
+4m18 for fine tuning
+0.1861 loss 0.9687 acc
+0.4819 valloss 0.8526 valacc
+
+19)
+exact same as 17) but training 5 + 30 epochs
+1m5 for initial training
+6m47 for fine tuning
+0.2988 loss 0.9110 acc
+0.4993 valloss 0.8654 valacc
+
+20)
+same as 17) but ADDED mirrored image for every image
+2m9 for initial training
+8m35 for fine tuning
+0.2415 loss 0.9310 acc
+0.2407 valloss 0.9299 valacc
+
+21)BEST EFFICIENCY
+same as 20 but 95-5 split train-dev
+5+15 epochs
+2m9 for initial training
+6m18 for fine tuning
+0.2597 loss 0.9173 acc
+0.2464 valloss 0.9299 valacc
+
+
+21bis)BEST EFFICIENCY
+same as 21 but 80-20 split train-dev
+5+15 epochs
+2m6 for initial training
+6m27 for fine tuning
+0.2598 loss 0.9236 acc
+0.2899 valloss 0.9220 valacc
