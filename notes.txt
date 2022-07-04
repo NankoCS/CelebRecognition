@@ -301,4 +301,17 @@ with 50min
 same as 30) but with 70min pictures per person
 0.89 val acc 1 acc
 
+32)
+80 min per person
+MobileNetV2
+Epoch 25/25
+76/76 [==============================] - 28s 374ms/step - 
+loss: 0.0451 - accuracy: 0.9893 - 
+val_loss: 0.9154 - val_accuracy: 0.8123
+
+33)
+80 min per person
+resnet50
+fine tuning from 120
+
 
