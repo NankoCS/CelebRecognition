@@ -1,0 +1,186 @@
+l1)
+MNv2
+5749 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0569 - accuracy: 0.9843
+val_loss: 16.0420 - val_accuracy: 0.1890
+
+2)
+MNv3Small
+5749 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.1133 - accuracy: 0.9769
+val_loss: 11.0677 - val_accuracy: 0.2048
+
+3)
+ResNet50
+5749 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0499 - accuracy: 0.9898
+val_loss: 15.0342 - val_accuracy: 0.2449
+
+
+min 2 files per person --> 1680 classes
+
+4)
+MNv2
+1680 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0569 - accuracy: 0.9843
+val_loss: 16.0420 - val_accuracy: 0.1890
+
+5)
+ResNet50
+1680 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0376 - accuracy: 0.9888
+val_loss: 11.4011 - val_accuracy: 0.3297
+
+min 5 files per person --> 423 classes
+
+6)
+MNv2
+423 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0644 - accuracy: 0.9829
+val_loss: 5.7161 - val_accuracy: 0.4252
+
+7)
+ResNet50
+423 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0354 - accuracy: 0.9910
+val_loss: 4.7714 - val_accuracy: 0.5330
+
+min 10 files per person --> 158 classes
+
+8)
+MNv2
+158 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0887 - accuracy: 0.9743
+val_loss: 2.9041 - val_accuracy: 0.5532
+
+9)
+ResNet50
+158 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0428 - accuracy: 0.9893
+val_loss: 2.3590 - val_accuracy: 0.6366
+
+
+min 20 files per person --> 62 classes
+
+10)
+MNv2
+62 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.1042 - accuracy: 0.9748
+val_loss: 1.6225 - val_accuracy: 0.6954
+
+11)
+ResNet50
+62 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0446 - accuracy: 0.9926
+val_loss: 1.2533 - val_accuracy: 0.7831
+
+
+min 30 files per person --> 34 classes
+
+
+12)
+MNv2
+34 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.1060 - accuracy: 0.9810 - val_loss: 1.1922 - val_accuracy: 0.7468
+5 + 10 epochs
+loss: 0.0811 - accuracy: 0.9847 - val_loss: 1.1634 - val_accuracy: 0.7616
+
+13)
+ResNet50
+34 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0541 - accuracy: 0.9931
+val_loss: 0.6900 - val_accuracy: 0.8397
+
+min 40 files per person --> 19 classes
+
+14)
+MNv2
+19 classes
+adam optimizer
+5 + 10 epochs
+loss: 0.0752 - accuracy: 0.9906
+val_loss: 0.7868 - val_accuracy: 0.8177
+
+15)
+ResNet50
+19 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0364 - accuracy: 0.9987
+val_loss: 0.4817 - val_accuracy: 0.8901
+
+min 45 files per person --> 14 classes
+
+14)
+MNv2
+14 classes
+adam optimizer
+5 + 10 epochs
+loss: 0.0858 - accuracy: 0.9864
+val_loss: 0.7148 - val_accuracy: 0.8248
+
+15)
+ResNet50
+14 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0515 - accuracy: 0.9932
+val_loss: 0.3237 - val_accuracy: 0.9094
+
+min 50 files per person --> 12 classes
+
+14)
+MNv2
+12 classes
+adam optimizer
+5 + 15 epochs
+loss: 0.0730 - accuracy: 0.9888 - : 0.5734 - val_accuracy: 0.8462
+5+60 epochs
+loss: 0.0236 - accuracy: 1.0000
+val_loss: 0.5389 - val_accuracy: 0.8558
+MNv3:
+loss: 0.2629 - accuracy: 0.9431
+val_loss: 0.4985 - val_accuracy: 0.8590
+Without data augmentation
+loss: 0.1114 - accuracy: 0.9840
+val_loss: 0.5481 - val_accuracy: 0.8590
+
+15)
+ResNet50
+12 classes
+adam optimizer
+5 + 5 epochs
+loss: 0.0573 - accuracy: 0.9880
+val_loss: 0.3721 - val_accuracy: 0.8878
+ResNet50v2
+loss: 0.2312 - accuracy: 0.9623 - val_loss: 0.4853 - val_accuracy: 0.8654
+Without the data augmentation
+loss: 0.0976 - accuracy: 0.9928 - val_loss: 0.4323 - val_accuracy: 0.8814
+
+RN_12C best for 12 classes
